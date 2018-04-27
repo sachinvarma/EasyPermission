@@ -4,11 +4,14 @@ A Library which will help you to easily ask all permission without writing a lot
 
 ![](https://github.com/sachinvarma/EasyPermission/blob/master/Art/demo.gif)
 
-** Why this ? **
+**Why this ?**
 
 1)It will automatically check whether the permission is granted or not.
+
 2)If permission is granted -> No action else Permission will be asked.
+
 3)Can ask multiple permission easily.
+
 4)Denied Permission list will be provided.
 
 **How to Add :**
