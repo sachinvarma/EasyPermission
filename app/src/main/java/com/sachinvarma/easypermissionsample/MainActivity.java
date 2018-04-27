@@ -48,11 +48,12 @@ public class MainActivity extends AppCompatActivity {
           boolean isGotAllPermissions =
             data.getBooleanExtra(EasyPermissionConstants.IS_GOT_ALL_PERMISSION, false);
 
+          if(data.hasExtra(EasyPermissionConstants.IS_GOT_ALL_PERMISSION)){
           if (isGotAllPermissions) {
             Toast.makeText(this, "All Permissions Granted", Toast.LENGTH_SHORT).show();
           } else {
             Toast.makeText(this, "All permission not Granted", Toast.LENGTH_SHORT).show();
-          }
+          }}
 
           // if you want to know which are the denied permissions.
           if (data.getSerializableExtra(EasyPermissionConstants.DENIED_PERMISSION_LIST) != null) {
