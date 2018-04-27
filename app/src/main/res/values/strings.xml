@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">EasyPermission</string>
+  <string name="ask_permission">ASK PERMISSION</string>
+</resources>

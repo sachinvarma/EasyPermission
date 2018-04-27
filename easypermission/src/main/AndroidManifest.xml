@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sachinvarma.easypermission"
+    >
+  <application>
+    <activity
+        android:theme="@style/Theme.Transparent"
+        android:name=".EasyPermission"/>
+  </application>
+</manifest>
