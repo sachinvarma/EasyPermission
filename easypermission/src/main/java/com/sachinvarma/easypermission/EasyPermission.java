@@ -33,7 +33,6 @@ public class EasyPermission extends Activity {
       }
     }
 
-
     if (permissionsNeeded.size() > 0) {
       for (int i = 0; i < permissionsNeeded.size(); i++) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M
@@ -50,6 +49,9 @@ public class EasyPermission extends Activity {
         askPermission.toArray(new String[askPermission.size()]),
         EasyPermissionConstants.PERMISSION_REQUEST_CODE);
     } else {
+      Intent intent = new Intent();
+      intent.putExtra(EasyPermissionConstants.IS_GOT_ALL_PERMISSION, true);
+      setResult(EasyPermissionConstants.INTENT_CODE, intent);
       finish();
     }
   }

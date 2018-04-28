@@ -48,38 +48,41 @@ public class MainActivity extends AppCompatActivity {
           boolean isGotAllPermissions =
             data.getBooleanExtra(EasyPermissionConstants.IS_GOT_ALL_PERMISSION, false);
 
-          if(data.hasExtra(EasyPermissionConstants.IS_GOT_ALL_PERMISSION)){
-          if (isGotAllPermissions) {
-            Toast.makeText(this, "All Permissions Granted", Toast.LENGTH_SHORT).show();
-          } else {
-            Toast.makeText(this, "All permission not Granted", Toast.LENGTH_SHORT).show();
-          }}
+          if (data.hasExtra(EasyPermissionConstants.IS_GOT_ALL_PERMISSION)) {
+            if (isGotAllPermissions) {
+              Toast.makeText(this, "All Permissions Granted", Toast.LENGTH_SHORT).show();
+            } else {
+              Toast.makeText(this, "All permission not Granted", Toast.LENGTH_SHORT).show();
+            }
+          }
 
           // if you want to know which are the denied permissions.
-          if (data.getSerializableExtra(EasyPermissionConstants.DENIED_PERMISSION_LIST) != null) {
+          if (data.hasExtra(EasyPermissionConstants.DENIED_PERMISSION_LIST)) {
+            if (data.getSerializableExtra(EasyPermissionConstants.DENIED_PERMISSION_LIST) != null) {
 
-            deniedPermissions = new ArrayList<>();
+              deniedPermissions = new ArrayList<>();
 
-            deniedPermissions.addAll((Collection<? extends String>) data.getSerializableExtra(
-              EasyPermissionConstants.DENIED_PERMISSION_LIST));
+              deniedPermissions.addAll((Collection<? extends String>) data.getSerializableExtra(
+                EasyPermissionConstants.DENIED_PERMISSION_LIST));
 
-            if (deniedPermissions.size() > 0) {
-              for (int i = 0; i < deniedPermissions.size(); i++) {
-                switch (deniedPermissions.get(i)) {
+              if (deniedPermissions.size() > 0) {
+                for (int i = 0; i < deniedPermissions.size(); i++) {
+                  switch (deniedPermissions.get(i)) {
 
-                  case EasyPermissionList.READ_EXTERNAL_STORAGE:
+                    case EasyPermissionList.READ_EXTERNAL_STORAGE:
 
-                    Toast.makeText(this, "Storage Permission not granted", Toast.LENGTH_SHORT)
-                      .show();
+                      Toast.makeText(this, "Storage Permission not granted", Toast.LENGTH_SHORT)
+                        .show();
 
-                    break;
+                      break;
 
-                  case EasyPermissionList.ACCESS_FINE_LOCATION:
+                    case EasyPermissionList.ACCESS_FINE_LOCATION:
 
-                    Toast.makeText(this, "Location Permission not granted", Toast.LENGTH_SHORT)
-                      .show();
+                      Toast.makeText(this, "Location Permission not granted", Toast.LENGTH_SHORT)
+                        .show();
 
-                    break;
+                      break;
+                  }
                 }
               }
             }
