@@ -20,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+  repositories {
+    maven { url "https://jitpack.io" }
+  }
 }
 
 dependencies {
@@ -31,4 +34,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':easypermission')
+//  implementation 'com.github.sachinvarma:EasyPermission:1.0.1'
 }

@@ -24,7 +24,7 @@ repositories {
     }
 ```
 ```
-implementation 'com.github.sachinvarma:EasyPermission:1.0.0'
+implementation 'com.github.sachinvarma:EasyPermission:1.0.1'
 ```
 
 Via Maven:
